@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let pessoas = [ "vinicius", "ana", "jessica", "regina", "kira", "kamen", "bob", "ranger" ]
+        
+        function sortear(){
+            let np = pessoas.length;
+            //arredondar o numero para baixo
+            let ns = Math.floor(Math.random() * np)
+            document.getElementById("d").innerHTML = pessoas[ns];
+        }
+    </script>     
+</head>
+<body>
+
+    <h1 id="d"></h1>
+    <button onclick="sortear()">sortear</button>
+
+</body>
+</html>
