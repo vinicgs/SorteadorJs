@@ -24,22 +24,32 @@ function addNome() {
 
 function sortear() {
     //get value from input
-    let quantos = document.getElementById("qtd").innerHTML;
-    //se o valor for diferente de 1 
-    if (quantos == 1) {
+    let quantos = document.getElementById("numero").value;
+
+    //se o valor for = 0
+    if (quantos == 0) {
         let np = pessoas.length;
         // Math.floor: arredonda o numero para baixo// Math.random: gera um numero aleatorio
         let ns = Math.floor(Math.random() * np)
         document.getElementById("d").innerHTML = pessoas[ns];
+
+    } else if (quantos > pessoas.length) {
+        alert("Numero de sorteados maior que o numero de participantes!");
     } else {
-        for (let i = 0; i < pessoas.length; i++) {
+        //sorteia quantos participantes foram selecionados sem repetir
+        let sorteados = [];
+        while (sorteados.length < quantos) {
             let np = pessoas.length;
-            let ns = Math.floor(Math.random() * np)
-            document.getElementById("d").innerHTML = pessoas[ns];
-            document.getElementById("d").innerHTML = pessoas.join(" | ");
+            let ns = Math.floor(Math.random() * np);
+            if (sorteados.indexOf(ns) == -1) {
+                sorteados.push(ns);
+            }
+        }
+        document.getElementById("d").innerHTML = pessoas[sorteados[0]];
+        for (let i = 1; i < sorteados.length; i++) {
+            document.getElementById("d").innerHTML += " | " + pessoas[sorteados[i]];
         }
     }
-    document.getElementById("mostrar").style.visibility = "visible";
 }
 
 function apagarLista() {

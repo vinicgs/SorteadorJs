@@ -17,52 +17,46 @@
 
 <body>
     <main class="container-md bg-dark bg-opacity-50 text-white rounded mt-12 ">
-        <form name="form"onsubmit="return false">
+        <form name="form" onsubmit="return false" >
             <h1 class="text-center md-6 mb-4 ">Sorteadorzinho</h1>
-            <input class="col-md-4 form-control " type="text" id="nome" placeholder="Digite o nome...">
-            <button onclick="addNome()" type="submit" class="btn btn-primary  mb-4 mt-1 col-md-3" label
-                for="nome">Adicionar
-                nome
+            <input class="col-md-4 form-control " type="text" id="nome" placeholder="Digite um nome ou número por vez">
+            
+            <button onclick="addNome()" type="submit" class="btn btn-primary  mb-4 mt-1 col-md-4 " label
+                for="nome">Adicionar nome
             </button>
-
-
+            
         </form>
 
-        <div class="row pb-5 col-md-12 ">
+        <div class="">
             <div class="col-md-6 mb-4">
                 <button onclick=" apagarLista()" type="button" class="btn btn-danger btn-danger mb-4 col-md-">Apagar
                     Lista</button>
                 <table class="table text-white ">
-                    <thead>
+                    <thead class="">
                         <tr>
-                            <th>Lista de Nomes</th>
-                            <h3 id="nParticipantes" class="text-center btn-light md-6 mb-4 col-md-3 "> 0</h3>
+                            <th>Lista de <span id="nParticipantes"> 0</span> participantes</th>
                         </tr>
+                        
                     </thead>
                     <tbody id="lista">
                     </tbody>
                 </table>
+
             </div>
-            <div class="row col-md-12 ">
-                <button onclick="sortear()" type="button" class="btn-lg btn-success col-md-6 text">Sortear</button>
-               
-                <form id="qtd" class="mb-4 text-xxl-center col-md-6">Número de sorteados:
-                    <input type="radio" name="qtsort" value="1" checked="checked">1
-                    <input type="radio" name="qtsort" value="2">2
-                    <input type="radio" name="qtsort" value="3">3
-                    <input type="radio" name="qtsort" value="4">4
-                    <input type="radio" name="qtsort" value="5">5
+            <div class="">
+
+                <form name="form">
+                    <input class=" form-control " type="number" id="numero" placeholder="Quantidade de sorteados">
+
+                    <button onclick="sortear()" type="button" class="btn-lg btn-success col-md-6 text">Sortear</button>
                 </form>
             </div>
 
             <div id="mostrar" class="text-center alert alert-secondary mb-4 mt-4 col-md-12">
                 <h3 id="d" class="  " role="alert"> Sorteado(s)</h3>
-
             </div>
 
         </div>
-        </div>
-
     </main>
     <div class="titan-background">
         <span class="stars stars-L"></span>
