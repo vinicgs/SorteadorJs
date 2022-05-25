@@ -1,5 +1,5 @@
 
-let pessoas = ["vinicius", "maria", "joao", "jose", "pedro", "nome", "teste", "nada", "tudo", "coisas"];
+let pessoas = [];
 
 function addNome() {
     let listaNome = document.getElementById("nome").value;
@@ -26,10 +26,11 @@ function sortear() {
     //get value from input
     let quantos = document.getElementById("numero").value;
 
-    //se o valor for = 0
+    //se o valor for = 0 sorteia apenas um numero
     if (quantos == 0) {
         let np = pessoas.length;
-        // Math.floor: arredonda o numero para baixo// Math.random: gera um numero aleatorio
+        // Math.floor: arredonda o numero para baixo
+        // Math.random: gera um numero aleatorio
         let ns = Math.floor(Math.random() * np)
         document.getElementById("d").innerHTML = pessoas[ns];
 

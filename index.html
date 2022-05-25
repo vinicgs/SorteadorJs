@@ -16,53 +16,65 @@
 </head>
 
 <body>
-    <main class="container-md bg-dark bg-opacity-50 text-white rounded mt-12 ">
-        <form name="form" onsubmit="return false" >
-            <h1 class="text-center md-6 mb-4 ">Sorteadorzinho</h1>
-            <input class="col-md-4 form-control " type="text" id="nome" placeholder="Digite um nome ou número por vez">
+    <main class="font-monospace text-lg container-sm p-5  bg-dark bg-opacity-50 text-white rounded mt-6 col-md-8">
+        <form name="form" onsubmit="return false" class="">
+            <h1 class="text-center md-6 mb-4 ">SorteadorJS</h1>
+            <p class="text-sm-center mb-4"> Site criado para testar funções em Javascript manipulando os elementos HTML. </p>
             
-            <button onclick="addNome()" type="submit" class="btn btn-primary  mb-4 mt-1 col-md-4 " label
+            <p class="alert-warning text-center col-md-4">Digite um nome ou número por vez </p>
+            <input class="col-md-4 form-control-lg " type="text" id="nome" placeholder="..." >
+            
+            <button onclick="addNome()" type="submit" class="btn-lg btn-primary  mb-4 mt-1" label
                 for="nome">Adicionar nome
             </button>
             
         </form>
 
         <div class="">
-            <div class="col-md-6 mb-4">
-                <button onclick=" apagarLista()" type="button" class="btn btn-danger btn-danger mb-4 col-md-">Apagar
+            <div class="">
+                <button onclick=" apagarLista()" type="button" class="btn btn-danger btn-danger mb-4">Apagar
                     Lista</button>
                 <table class="table text-white ">
                     <thead class="">
                         <tr>
-                            <th>Lista de <span id="nParticipantes"> 0</span> participantes</th>
-                        </tr>
-                        
+                            <th>Sua lista possui <span id="nParticipantes"> 0</span> participantes</th>
+                        </tr>                        
                     </thead>
                     <tbody id="lista">
                     </tbody>
                 </table>
 
             </div>
-            <div class="">
-
-                <form name="form">
-                    <input class=" form-control " type="number" id="numero" placeholder="Quantidade de sorteados">
-
-                    <button onclick="sortear()" type="button" class="btn-lg btn-success col-md-6 text">Sortear</button>
+            <div class=" col-md-12">
+                <form name="form" class="mt-5">
+                    <h4>Quantidade de sorteados</h4> 
+                    <input class="text-uppercase form-control-plaintext bg-black mb-4 col-md-6 text-light" type="number" id="numero" placeholder="1">
+                    <button onclick="sortear()" type="button" class="btn-lg btn-success col-md-6">Sortear</button>
                 </form>
             </div>
 
-            <div id="mostrar" class="text-center alert alert-secondary mb-4 mt-4 col-md-12">
-                <h3 id="d" class="  " role="alert"> Sorteado(s)</h3>
+            <div id="mostrar" class="text-center alert alert-secondary m-5">
+                <h3 id="d" class=" card-subtitle  " role="alert"> Sorteado(s)</h3>
             </div>
 
         </div>
+        <div class="text-center container-sm bg-opacity-50 text-white rounded mt-6 col-md-12">
+            <p class="text-md-center">
+                Desenvolvido por: <a href="http://viniciuscastro.vercel.app/" class="text-white" target="_blank">Vinicius
+                    Castro</a>
+            </p>
+        </div>
     </main>
+    <footer>
+
+
+    </footer>
+
+</body>
+
     <div class="titan-background">
         <span class="stars stars-L"></span>
         <span class="stars stars-M"></span>
         <span class="stars stars-S"></span>
     </div>
-</body>
-
 </html>
